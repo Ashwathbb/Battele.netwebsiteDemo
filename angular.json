@@ -34,10 +34,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+            "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/style.scss"
             ],
             "scripts": []
           },
@@ -102,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8025a588-a561-47d2-98c4-df39651e7511"
   }
 }

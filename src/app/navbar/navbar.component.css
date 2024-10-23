@@ -1,0 +1,22 @@
+.nav-item {
+    position: relative;
+}
+
+.dropdown1::before {
+    content: "";
+    position: absolute;
+    top: -6px; /* Adjust as needed for spacing */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #1f2937 transparent; /* Adjust color */
+}
+
+.dropdown1 {
+    padding-top: 12px; /* Optional: For additional spacing inside */
+}
+
+.group:hover .dropdown1 {
+    display: block; /* Show dropdown on hover */
+}

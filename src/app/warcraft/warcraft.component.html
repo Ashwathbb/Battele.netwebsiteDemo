@@ -1,0 +1,219 @@
+
+<div class="py-[85px]">
+  <app-breadcrumb [currentTitle]="currentTitle"></app-breadcrumb>
+  <div class="py-3">
+    <h1 class="text-white text-2xl font-bold">Video Player</h1>
+  </div>
+  <div class="flex bg-black text-white w-[1570px]">
+    <!-- Video player section -->
+    <div class="warcraftvideo w-full ">
+      <div class="absolute bottom-0 top-[740px]  left-1/3 transform -translate-x-1/2 mb-2 text-white font-bold">
+        {{ selectedIndex + 1 }}/{{ relatedVideos.length }}
+      </div>
+      
+      <!-- Video player -->
+      <div class="bg-black rounded-lg overflow-hidden">
+      
+              <iframe *ngIf="relatedVideos[selectedIndex]?.isVideo" class="w-full h-[500px]" 
+                  [src]="selectedVideoUrl" title="YouTube video player"
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+            </iframe>
+            <img *ngIf="!relatedVideos[selectedIndex].isVideo" [src]="selectedVideoUrl" class="w-full h-[500px] object-cover" alt="Selected image">
+ 
+      </div>
+   
+      <!-- Related videos section (Scrollable slider) -->
+      <div class="mt-4 bg-black">
+    
+        <div class="relative">
+       
+          <!-- Scrollable thumbnails container -->
+          <div class="flex overflow-x-auto space-x-4 bg-black py-4 scrollbar-custom">
+            
+            <div *ngFor="let video of relatedVideos; let i = index" 
+                class="w-48 flex-shrink-0 cursor-pointer relative" 
+                (click)="selectVideo(i)"
+                [ngClass]="{'border-b-4 border-sky-500': selectedIndex === i}">
+              <div class="bg-gray-900 p-2 rounded-lg">
+                <!-- Display either image or video thumbnail -->
+                <img *ngIf="!video.isVideo" [src]="video.thumbnail" class="w-full h-28 rounded-md object-cover" alt="{{ video.title }}">
+                <div *ngIf="video.isVideo" class="relative w-full h-28">
+                  <img [src]="getYoutubeThumbnail(video.thumbnail)" class="w-full h-28 rounded-md object-cover" alt="{{ video.title }}">
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-white-600 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="9 18 15 12 9 6 9 18" />
+                    </svg>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+      <p class=" absolute mt-4 text-gray-400 bg-black">
+       <strong class=" font-bold text-4xl mb-6 mt-2 text-gray-300 relative">GET BACK IN THE FIGHT</strong> <br><br>
+        The Harbinger of the Void and the Nerubian Empire have brought the city of Dalaran to ruin, 
+        sending the forces of Azeroth reeling. <br>Descend into the never-before-seen subterranean worlds of Khaz Algar,
+        filled with hidden wonders and lurking perils. Deliver justice <br>upon the servants of the Shadow, and investigate the dark motives behind the Harbinger’
+        s machinations in this thrilling first adventure<br> of the Worldsoul Saga™.¹Purchase World of Warcraft®: The War Within™ to play the expansion now, 
+        with an Enhanced Level 70 <br>Character Boost included in all editions. Upgrade to the Heroic or Epic Edition to unlock a slew of benefits to aid you in your coming adventures!
+        <br>
+        <br><br>
+      </p>
+    </div>
+    <div class="  bg-black mt-4 px-[40px]">
+
+            <h2 class="mt-2 text-xl font-bold ">World of Warcraft®: The War Within™</h2>
+            <p class="mt-2 text-gray-400 mb-4 font-semibold">MASSIVELY MULTPLAYAER RPG</p>
+            <p class="bg-yellow-500 text-black  text-sm mb-2">Now live! Get a Level 70 Boost included in all editions and get back in the fight.</p>
+  
+            <div class="flex flex-row justify-between">
+              <h3 class="text-xl font-bold text-gray-300 mb-2 mt-6">Select a Product</h3>
+              <a href="showCompareSection()" class="mb-2 mt-4 text-sky-500 text-xl font-bold mt-6">Compare</a>
+            </div>
+      
+            <!-- Edition List Section -->
+            <div class="">
+              <ul>
+                <li *ngFor="let edition of editions; let i = index"
+                    (mouseenter)="hoveredEditionIndex = i" 
+                    (mouseleave)="hoveredEditionIndex = null" 
+                    (click)="selectEdition(i)" 
+                    class="relative flex justify-between items-center bg-neutral-900 py-[40px] h-[40px] border-gray-700 border-b-2 hover:bg-neutral-700 mb-2"
+                    [ngClass]="{'border-sky-500 border-l-4': selectedEditionIndex === i}">
+              
+                  <div class="flex items-center space-x-4">
+                    <!-- Display image for non-video editions -->
+                    <img *ngIf="!edition.isVideo" [src]="edition.preview" class="w-12 h-12 object-cover rounded-lg">
+                    <!-- Display YouTube thumbnail for video editions -->
+                    <img *ngIf="edition.isVideo" [src]="getYoutubeThumbnail(edition.preview)" class="w-12 h-12 object-cover rounded-lg">
+                    <span class="font-bold text-2xl text-gray-300">{{ edition.name }} <br>{{ edition.price }}</span>
+                  </div>
+                
+              
+                  <!-- Hover div (small preview) -->
+                  <div *ngIf="hoveredEditionIndex === i" class="absolute left-[-150px] top-0 w-[120px] h-[90px] bg-neutral-700 rounded-lg">
+                    <img *ngIf="!edition.isVideo" [src]="edition.preview" class="w-full h-full object-cover" alt="{{ edition.name }}">
+                    <img *ngIf="edition.isVideo" [src]="getYoutubeThumbnail(edition.preview)" class="w-full h-full object-cover" alt="{{ edition.name }}">
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+  
+            <div class="mt-4">
+              <button class="bg-blue-600 w-full py-4 rounded-lg text-white text-2xl font-black mb-4 border border-2 border-gray-600 hover:border-gray-400">Buy Now</button>
+              <button class="bg-gray-900 w-full py-4 rounded-lg text-white text-2xl font-black border border-2 border-gray-600 hover:border-gray-400">Add to Wish List</button>
+            </div>
+            <!-- Additional Info Section with height toggle -->
+              <div class="overflow-hidden transition-all duration-300 ease-in-out border border-2 border-gray-700 bg-neutral-900 mt-[50px] text-sm py-4 px-4"
+              [class.h-auto]="showAdditionalInfo" [class.h-[100px]]="!showAdditionalInfo">
+              <ul class="list-disc pl-6 text-gray-400">
+                <li>Internet connection, Battle.net® Account, and Battle.net® desktop app required to play.</li>
+                <li>Vessel of Hatred requires Diablo® IV base game.</li>
+                <li>Mount or pet feature must be unlocked in-game before the item can be used.</li>
+                <li *ngIf="showAdditionalInfo">After purchase, items will be delivered in-game at the next login.</li>
+                <li *ngIf="showAdditionalInfo">Upgrading editions will not re-grant in-game items already unlocked on your account.</li>
+              </ul>
+            
+            </div>
+            <button (click)="toggleAdditionalInfo()" class="text-white px-4 py-2 mt-4 hover:bg-neutral-800">
+              {{ showAdditionalInfo ? 'Hide Additional Info' : 'Show Additional Info..' }}
+            </button>
+         
+
+    </div>
+  
+  </div>
+  <div class="warcraft-container">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-[70px] bg-block shadow z-410 transition-transform duration-300 border border-2 mt-[70px]" [ngClass]="{'translate-y-[-100%]': isNavbarHidden}">
+      <div class="flex justify-between items-center p-4">
+        <h3 class="text-xl font-bold text-gray-300">Product Navigation</h3>
+        <ul class="flex space-x-4 text-gray-300">
+          <li><a routerLink="overview" class=" hover:text-sky-500">Overview</a></li>
+          <li><a routerLink="compare-products" class="  hover:text-sky-500">Compare Products</a></li>
+          <li><a routerLink="game-features" class=" hover:text-sky-500">Game Features</a></li>
+          <li><a routerLink="system-requirements" class=" hover:text-sky-500">System Requirements</a></li>
+          <li><a routerLink="product-list" class=" hover:text-sky-500">Product List</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Content Area -->
+
+      <div class="h-[800px]">
+        <router-outlet></router-outlet>
+      </div>
+    
+  </div>
+  
+
+</div>
+
+<!-- Comparison Section 
+
+ <div *ngIf="isCompareActive" class="bg-black p-4 mt-4 rounded-lg">
+  <ul class="flex space-x-4">
+    <li (click)="selectTab('overview')" class="cursor-pointer text-gray-300 hover:text-sky-500">Overview</li>
+    <li (click)="selectTab('compareProducts')" class="cursor-pointer text-gray-300 hover:text-sky-500">Compare Products</li>
+    <li (click)="selectTab('gameFeatures')" class="cursor-pointer text-gray-300 hover:text-sky-500">Game Features</li>
+    <li (click)="selectTab('systemRequirements')" class="cursor-pointer text-gray-300 hover:text-sky-500">System Requirements</li>
+    <li (click)="selectTab('productList')" class="cursor-pointer text-gray-300 hover:text-sky-500">Product List</li>
+  </ul>
+</div>
+
+
+<div class="mt-4">
+  <ng-container [ngSwitch]="selectedTab">
+    <app-overview *ngSwitchCase="'overview'"></app-overview>
+    <app-compare-products *ngSwitchCase="'compareProducts'"></app-compare-products>
+    <app-game-features *ngSwitchCase="'gameFeatures'"></app-game-features>
+    <app-system-requirements *ngSwitchCase="'systemRequirements'"></app-system-requirements>
+    <app-product-list *ngSwitchCase="'productList'"></app-product-list>
+  </ng-container>
+
+<router-outlet></router-outlet>
+-->
+
+
+<!--
+  
+<iframe class="w-full h-96" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer;
+ autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+code snippet: 
+
+"   <div class="flex flex-row justify-between">
+              <h3 class="text-xl font-bold text-gray-300 mb-2 mt-6">Select a Product</h3>
+              <a href="#" class="mb-2 mt-4 text-sky-500 text-xl font-bold mt-6">Compare</a>
+      </div>
+"i have 5 componets 
+    * overview
+    * compareproducts
+    * game feature
+    * system requirments
+    * productList 
+overview takes some place like 800px of height when i reached this place like scrolldown the menubar and navbar will be hiden using sticky position 
+then including above 5 componets one bar i need 
+
+    this are five componets when i clicking the compare on top of the code one row like nvabar it comes including all the components when we clicking that button related infoemation will be shown and when we scorl down the componet will be change main impoartant when we clicking compare theoverview details will be hidden and show this row only how to this proper structure and code
+    
+        
+     <button 
+      (click)="prevSlide()" 
+      class="absolute left-1 top-1/2 transform -translate-y-1/2 bg-gray-900 border-2 border-gray-600 px-3 py-5 hover:border-gray-400 rounded-md  duration-200">
+       ❮
+      </button>
+  
+
+
+  absolute left-1 top-1/2 transform -translate-y-1/2 bg-gray-900 border-2 border-gray-600 px-3 py-5 hover:border-gray-400 rounded-md  duration-200
+  absolute right-1 top-1/2 transform -translate-y-1/2 bg-gray-900 border-2 border-gray-600 px-3 py-5 hover:border-gray-400 rounded-md   duration-200
+
+   
+   
+-->

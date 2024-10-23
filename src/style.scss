@@ -1,0 +1,184 @@
+// Global styles for the menu bar
+$navbar-bg:black; // Dark background color
+$navbar-color: white;
+$hover-bg: rgba(255, 255, 255, 0.1); // Light background for hover
+$dropdown-bg: #374151; // Dropdown background color
+$dropdown-item-hover: #4b5563; // Dropdown item hover color
+$font-family:"Noto Sans", Helvetica, Arial, sans-serif;
+$navabrbgcolor:"bg-neutral-900";
+$navbar-font:"text-lg";
+.homePage{
+        margin-left: 8.9rem;
+        margin-right: 9rem;
+        width:1570px;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+}
+body {
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+}
+.menu-bar {
+    background-color: $navbar-bg;
+    color: $navbar-color;
+    padding: 1rem 0;
+    display: flex;
+    width:1603px;
+    align-items: center;
+    justify-content: space-between; // Space between logo and menu items
+    position: relative; // To position dropdowns correctly
+    font-family:$font-family;
+}
+.nav-bar{
+    color: $navbar-color;
+    transition: background-color 0.3s;
+    position:fixed;
+    width:1570px;
+
+}
+.nav-barItem{
+    display: grid;
+    align-items: center;
+}
+.warcraftvideo
+{
+    width: 1070px;
+}
+.warcraftcontent{
+    width: 500px;
+}
+.Hover:hover{
+        background-color: rgb(56, 55, 54); // Change background on hover
+}
+.nav-item {
+    position: relative; // Keep this for dropdown positioning
+    text-align: center; // Center the text in each item
+    font-size:16px;
+    transition: background-color 0.3s ease;
+}
+.truncate-text {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden;    /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for long text */
+    max-width: 100%;     /* Define the max width of the text container */
+}
+.group:hover .nav-bar-dropdown {
+    display: flex; // Show dropdown on hover
+}
+
+
+.n-items6{
+    color: $navbar-color;
+    &:hover {
+        background-color: rgb(56, 55, 54);; // Change background on hover
+    }
+}
+.menu-bar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; // Space between logo and text
+    cursor: pointer; // Pointer cursor for the logo
+}
+
+.menu-item {
+    position: relative; // For dropdown positioning
+    padding: 0.5rem 1rem; // Menu item padding
+    cursor: pointer; // Pointer cursor for menu items
+    transition: background-color 0.3s; // Transition for hover effect
+
+    &:hover {
+        background-color: $hover-bg; // Change background on hover
+    }
+}
+
+.dropdown-menu {
+    position: absolute; // Position the dropdown
+    top: 100%; // Align below the menu item
+    right: 0; // Align to the right
+    background-color: $navbar-bg; // Dark background for dropdown
+    border-radius: 0.25rem; // Rounded corners
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Dropdown shadow
+    z-index: 10; // Ensure dropdown appears above other elements
+    display: none; // Initially hide dropdown
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem; // Padding for dropdown items
+    color: white; // Text color
+    cursor: pointer; // Pointer cursor on hover
+    transition: background-color 0.3s; // Transition for hover effect
+
+    &:hover {
+        background-color: $dropdown-item-hover; // Change background on hover
+    }
+}
+
+// Show dropdown when its parent is hovered
+.menu-item:hover .dropdown-menu {
+    display: block; // Show dropdown on hover
+}
+.w-72 {
+    width: 18rem;
+}
+.box-border {
+    box-sizing: border-box;
+}
+.bg-black {
+    background-color: #000;
+}
+
+
+ 
+
+  //*****************************
+  .nav-bar1 {
+    top:20px;
+    display: flex;
+    font-family: $font-family;
+    transition: background-color 0.3s;
+  }
+  
+ 
+  //*************************drop dwon 
+  /* Dropdown styling */
+.nav-bar-dropdown {
+    background-color: rgba(255, 255, 255, 0.1); /* Default background */
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Single column grid */
+    gap: 8px; /* Spacing between items */
+}
+/* Dropdown items hover effect */
+.dropdown-item:hover {
+    background-color: rgb(56, 55, 54); /* Hover background color */
+}
+
+/* Ensure images and text are aligned correctly */
+.dropdown-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-item .font-light {
+    font-size: 0.875rem; /* Text size for description */
+    color: rgba(255, 255, 255, 0.6); /* Lighter color for description */
+}
+///*****************************
+.LivePost
+  {
+  
+   
+    background-color: #1b1717;
+    padding-top: 600px;
+ 
+  }
+  
+  

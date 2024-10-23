@@ -1,0 +1,204 @@
+<div [ngClass]="navbarFixed ? 'top-0' : 'top-[80px]'"
+  class="nav-bar  relative h-18 flex   bg-black  z-40 text-lg font-semibold py-2 ">
+  <div
+    class="nav-barItem grid grid-cols-9 w-[70%] group-hover:block h-auto mx-auto bg-neutral-800 border border-1 border-gray-600">
+    <div class="nav-item col-span-1 group  relative hover:bg-neutral-600 h-full py-4 items-center  ">
+      Warcraft
+      <img src="assets/arrow-down.png" class="inline w-2 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center p-2">
+            <img src="assets/items/w3.jpg" class="w-7 h-7 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block  text-sm text-gray-300">Word of Warcraft Classic</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center p-2">
+            <img src="assets/items/w2.jpg" class="w-6 h-5 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block  text-sm text-gray-300">Warcraf Rumbble</span>
+              <span class="block text-xs text-gray-400">Action Stratergy</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center p-2">
+            <img src="assets/items/w5.jpg" class="w-6 h-5 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block  text-sm text-gray-300">Warcraft III</span>
+              <span class="block text-xs text-gray-400">Real-Time Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item col-span-1 group relative  hover:bg-neutral-600 h-full py-4 items-center">
+      Call of Duty
+      <img src="assets/arrow-down.png" class="inline w-2 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item col-span-1 group relative  hover:bg-neutral-600 h-full py-4 items-center ">
+      Diablo
+      <img src="assets/arrow-down.png" class="inline w-3 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-item col-span-1 group relative hover:bg-neutral-600 h-full py-4 items-center">
+      Overwatch
+      <img src="assets/arrow-down.png" class="inline w-3 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item col-span-1 group relative  hover:bg-neutral-600 h-full py-4 items-center">
+      StarCraft
+      <img src="assets/arrow-down.png" class="inline w-3 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item col-span-1 group relative  hover:bg-neutral-600 h-full py-4 items-center">
+      More
+      <img src="assets/arrow-down.png" class="inline w-3 h-3 ml-2">
+
+      <!-- Dropdown content -->
+      <div
+        class="dropdown absolute hidden border border-t-[8px] border-black bg-neutral-900 text-white w-60 mt-4 z-10  group-hover:block">
+        <div class="p-2" (click)="navigateTo('warcraft')">
+          <div class="Hover flex items-center  p-2">
+            <img src="assets/items/w1.jpg" class="w-6 h-6 mr-2"> <!-- Icon -->
+            <div class="flex flex-col">
+              <span class="block text-sm text-gray-300">World of Warcraft</span>
+              <span class="block text-xs text-gray-400">Massively Multiplayer RPG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-4 space-x-2"></div>
+  </div>
+
+  <div
+    class="nav-barItem flex w-[15%]   bg-neutral-800 hover:bg-neutral-600 p-4 mx-2 border border-1 border-gray-600">
+    Search..
+  </div>
+  <div
+    class="nav-barItem flex w-[15%]  justify-between bg-neutral-800 hover:bg-neutral-600 p-4 border border-1 border-gray-600">
+    Battel.net Balance
+  </div>
+</div>
+
+
+
+
+
+<!--
+<div class="nav-bar h-10 ">
+  <div class="nav-barItem flex w-[65%] justify-between  mx-auto">
+    
+       <div class="nav-item relative group w-[65%] grid grid-cols-6 gap-2">
+        <span class="col-span-1 cursor-pointer">Warcraft</span>
+        <span class="col-span-1 cursor-pointer">Starcraft</span>
+        <span class="col-span-1 cursor-pointer">Diablo</span>
+        <span class="col-span-1 cursor-pointer">Overwatch</span>
+        <span class="col-span-1 cursor-pointer">Hearthstone</span>
+        <span class="col-span-1 cursor-pointer">Heroes of the Storm</span>
+
+        <div class="nav-bar-dropdown dropdown absolute hidden group-hover:grid grid-cols-1 gap-2 mt-2 rounded-md w-80 z-10 border-solid border-2 border-gray-900">
+          <div class="dropdown-item p-2">
+            <div class="flex items-center p-2 hover:bg-gray-600">
+              <img src="assets/items/word-of.png" class="w-10 h-10 mr-2" alt="World of Warcraft">
+              <span class="truncate-text cursor-pointer">World of Warcraft<br>
+                <span class="font-light text-sm text-gray-300">Massively Multiplayer RPG</span>
+              </span>
+            </div>
+          </div>
+          <div class="dropdown-item p-2">
+            <div class="flex items-center p-2 hover:bg-gray-600">
+              <img src="assets/items/word-of.png" class="w-10 h-10 mr-2" alt="World of Warcraft">
+              <span class="truncate-text cursor-pointer">World of Warcraft Classic<br>
+                <span class="font-light text-sm text-gray-300">Classic RPG</span>
+              </span>
+            </div>
+          </div>
+
+
+        </div>
+  </div>
+   
+   <div class="w-[20%] bg-gray-800">
+  
+  </div>
+  <div class="w-[15%] bg-gray-700">
+   
+  </div>
+</div>
+</div>       
+-->

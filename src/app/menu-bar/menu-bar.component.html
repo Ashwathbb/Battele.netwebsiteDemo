@@ -1,0 +1,74 @@
+
+<div class="menu-bar  justify-between px-8">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="menu-bar-logo items-center space-x-2">
+            <img src="assets/300px-Battlenet_logo.webp" alt="Logo" class="h-14">
+          </div>
+      
+        <!-- Menu Items -->
+        <div class="flex items-center space-x-6">
+            <!-- Download Button -->
+            <div class="flex items-center space-x-2 cursor-pointer group-hover:block hover:bg-gray-600 rounded-md p-2 transition duration-300">
+              <img src="assets/d2.png" alt="Download" class="w-6 h-6 " />
+              <span class="text-white font-bold">Download Battle.net</span>
+            </div>
+          
+            <!-- Support -->
+            <div class="flex items-center space-x-2 cursor-pointer group hover:bg-gray-600 rounded-md p-2 transition duration-300">
+              <img src="assets/h1.png" alt="Support" class="w-6 h-6" />
+              <span class="text-white font-bold">Support</span>
+            </div>
+            
+            
+            <div class="relative" (mouseleave)="closeDropdown()">
+                <!-- Accounts Button with hover and click events -->
+                <div 
+                    class="flex items-center sticky  cursor-pointer text-white group hover:bg-gray-600 rounded-md p-2 transition duration-300 relative"
+                    (mouseenter)="openDropdown()"
+                    (click)="toggleDropdown()">
+                    <img src="assets/acc.png" alt="Account" class="w-6 h-6 font-bold" />
+                    <span class="font-bold">Accounts</span>
+                    <!-- Down arrow icon -->
+                    <svg class="w-4 h-4 transform group-hover:rotate-180 transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+            
+                <div *ngIf="isDropdownOpen" 
+                     class="absolute group-hover:block">
+                    <ul class="text-white">
+                        <!-- Login Button -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <button class="w-full py-2 bg-blue-600 text-white rounded-md text-center">Log In</button>
+                        </li>
+                        <!-- Account Settings -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <img src="assets/s_user.png" alt="Account Settings" class="w-5 h-5 mr-2" />
+                            <span>Account Settings</span>
+                        </li>
+                        <!-- Wish List -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <img src="assets/wishlist.png" alt="Wish List" class="w-5 h-5 mr-2" />
+                            <span>Wish List</span>
+                        </li>
+                        <!-- Redeem Code -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <img src="assets/redeem.png" alt="Redeem Code" class="w-5 h-5 mr-2" />
+                            <span>Redeem Code</span>
+                        </li>
+                        <!-- Change Battle -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <img src="assets/change.png" alt="Change Battle" class="w-5 h-5 mr-2" />
+                            <span>Change Battle</span>
+                        </li>
+                        <!-- Create Account -->
+                        <li class="px-4 py-3 hover:bg-gray-600 cursor-pointer flex items-center w-full">
+                            <img src="assets/create.png" alt="Create Account" class="w-5 h-5 mr-2" />
+                            <span>Create Account</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+  </div>
+  

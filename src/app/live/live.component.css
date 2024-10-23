@@ -1,0 +1,64 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .card-image {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    position: relative;
+  }
+  
+  .live-button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .logo-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .description {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
